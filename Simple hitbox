@@ -1,0 +1,8 @@
+-- prints when player touches part
+local part = workspace.Part
+part.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player then
+        print(player.Name .. " touched the part")
+    end
+end)
