@@ -1,0 +1,21 @@
+-- Player Welcome and Leaderboard Example
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Leaderboard setup
+Players.PlayerAdded:Connect(function(player)
+    print("Welcome to the game, " .. player.Name)
+
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+
+    local points = Instance.new("IntValue")
+    points.Name = "Points"
+    points.Value = 0
+    points.Parent = leaderstats
+end)
+
+Players.PlayerRemoving:Connect(function(player)
+    print(player.Name .. " has left the game")
+end)
