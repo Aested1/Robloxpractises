@@ -1,0 +1,5 @@
+-- prints when a GUI button is clicked
+local button = script.Parent
+button.MouseButton1Click:Connect(function()
+    print("Button clicked!")
+end)
